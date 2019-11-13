@@ -117,7 +117,7 @@ window.survey = new Survey.Model(json);
 survey
     .onComplete
     .add(function (result) {
-        document.location = "/test2/thanks.html";
+        document.location = "/single/thanks.html";
     });
 
 $("#surveyElement").Survey({ model: survey });

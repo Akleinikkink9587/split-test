@@ -11,13 +11,13 @@ let apiProxy = httpProxy.createProxy({
     changeOrigin: true
 });
 
-app.use("/test1", express.static(__dirname + "/test1"));
-app.use("/test2", express.static(__dirname + "/test2"));
+app.use("/multi", express.static(__dirname + "/multi"));
+app.use("/single", express.static(__dirname + "/single"));
 
 
 let aUrls = [
-    "/test1/",
-    "/test2/"
+    "/multi/",
+    "/single/"
 ];
 
 app.all("/*", function(req, res) {
@@ -34,5 +34,5 @@ app.all("/*", function(req, res) {
 // and proxy rules to proxy requests to different targets
 http.createServer(app)
 .listen(app.get('port'), function () {
-  console.log('Example app listening on port ' + app.get('port') + "! Go to https://localhost:" + app.get('port') + "/")
+  console.log('Example app listening on port ' + app.get('port') + "! Go to http://localhost:" + app.get('port') + "/")
 });
