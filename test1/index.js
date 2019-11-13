@@ -132,7 +132,7 @@ survey
     .onComplete
     .add(function (result) {
         document
-            .location = "thanks.html";
+            .location = "/test1/thanks.html";
     });
 
 $("#surveyElement").Survey({ model: survey });
